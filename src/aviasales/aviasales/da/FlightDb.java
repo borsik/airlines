@@ -12,4 +12,5 @@ public interface FlightDb {
     List<Flight> filterFlightsByDate(Date flightDateFrom, Date flightDateTo);
     ArrayList<Flight> loadFlights(String className) throws IOException;
 
+    List<Flight> getFlightsByDate(Date flightDateFrom, Date flightDateTo);
 }

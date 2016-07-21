@@ -14,9 +14,7 @@ public class Airport {
     }
 
     public Airport getAirportByCity(City city) {
-
         Map<City, Airport> city_air_map = new HashMap<>();
-
         return city_air_map.get(city);
     }
 

@@ -56,4 +56,3 @@ public class Flight implements BuffAdapter {
                 + freePlaces();
     }
 }
-

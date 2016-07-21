@@ -1,11 +1,7 @@
 package aviasales;
 
-import aviasales.da.FlightDb;
 import aviasales.domain.Route;
 import aviasales.domain.Ticket;
-
-import java.util.Date;
-import java.util.List;
 
 /**
  * Created by laptop on 21.07.2016.
