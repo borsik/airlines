@@ -17,23 +17,24 @@ public class Controller {
     private static ArrayList<Route> result = new ArrayList<>();
 
     public static ArrayList<Route> searchdirectFlights(SearchCriteria sp) throws IOException {
-        //ArrayList<Flight> flights = FlightConcreteDB.loadFlights();
+        ArrayList<Flight> flights = FlightConcreteDB.loadFlights("flights.csv");
 
-        String from = sp.getDep();
-        String to = sp.getArr();
-        LocalDate depDate = sp.getDepDate();
+        String from = sp.getDepartureCity();
+        String to = sp.getArrivalCity();
+        LocalDate depDate = sp.getDateDeparture();
 
-        Flight flights;
+        //Flight flights;
         for (Flight f : flights) {
             if ((f.getFromTime().toLocalDate().isEqual(depDate)
-                    && (f.freePlaces() >= sp.getClinetsCount())))
+                    && (f.freePlaces() >= sp.getClientsCount())))
                 if ((Objects.equals(f.getFromDer(), from))) {
 
                     if (isEndFlight(f, to)) {
-                        Controller.result.add(new Route(f));
+
+                        Controller.result.add(new Route(f.getFromDer(), f.getToDer()));
 
                     } else {
-                        searchConnectedFlights(f, to, sp.getClinetsCount());
+                        searchConnectedFlights(f, to, sp.getClientsCount());
                     }
                 }
         }

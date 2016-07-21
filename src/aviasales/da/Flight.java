@@ -1,5 +1,7 @@
 package aviasales.da;
 
+import aviasales.domain.Airport;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -11,12 +13,12 @@ public class Flight implements BuffAdapter {
     private String number;
     private double cost;
     private int freePlaces;
-    private String fromDer;
-    private String toDer;
+    private Airport fromDer;
+    private Airport toDer;
     private LocalDateTime fromTime;
     private LocalDateTime arrTime;
 
-    public Flight(String number, String fromDer, String arr, LocalDateTime fromTime,
+    public Flight(String number, Airport fromDer, Airport arr, LocalDateTime fromTime,
                   LocalDateTime arrTime, double cost, int freePlaces){
         this.number = number;
         this.fromDer = fromDer;
@@ -27,13 +29,13 @@ public class Flight implements BuffAdapter {
         this.freePlaces = freePlaces;
     }
 
-    private String getNumber(){ return number; }
-    private double getCost(){ return cost; }
-    private int freePlaces(){ return freePlaces; }
-    private String getFromDer(){ return fromDer; }
-    private String getToDer(){ return toDer; }
-    private LocalDateTime getFromTime(){ return fromTime; }
-    private LocalDateTime getArrTime(){ return arrTime; }
+    public String getNumber(){ return number; }
+    public double getCost(){ return cost; }
+    public int freePlaces(){ return freePlaces; }
+    public Airport getFromDer(){ return fromDer; }
+    public Airport getToDer(){ return toDer; }
+    public LocalDateTime getFromTime(){ return fromTime; }
+    public LocalDateTime getArrTime(){ return arrTime; }
 
     public String toString(){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(timeFormat);
