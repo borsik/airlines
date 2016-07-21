@@ -11,7 +11,7 @@ public class SearchCriteria {
     String arv;
     Date dateDept;
     Date dateArv;
-    SearchCriteria(String newDept, String newArv, Date newDateDept, Date newDateArv){
+    public SearchCriteria(String newDept, String newArv, Date newDateDept, Date newDateArv){
         dept = newDept;
         arv = newArv;
         dateDept = newDateDept;
