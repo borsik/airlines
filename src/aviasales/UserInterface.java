@@ -5,37 +5,44 @@ import aviasales.dijkstra.TestDijkstraAlgorithm;
 import java.io.Console;
 import java.text.DateFormat;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.Locale;
 import java.util.Scanner;
 
 /**
  * Created by laptop on 21.07.2016.
  */
 public class UserInterface {
-    private String cityFrom;
-    private String cityTo;
+    private String departureCity;
+    private String arrivalCity;
     LocalDate arrivalDate;
     LocalDate departureDate;
     private boolean twoWay;
 
-    public String getCityFrom() {
-        return cityFrom;
+    private SearchCriteria searchCriteria;
+
+    public SearchCriteria getSearchCriteria() {
+        return searchCriteria;
     }
 
-    public String getCityTo() {
-        return cityTo;
+    public void setSearchCriteria(SearchCriteria searchCriteria) {
+        this.searchCriteria = searchCriteria;
     }
 
-    public void setCityFrom(String cityFrom) {
-        this.cityFrom = cityFrom;
+    public String getDepartureCity() {
+        return departureCity;
     }
 
-    public void setCityTo(String cityTo) {
-        this.cityTo = cityTo;
+    public String getArrivalCity() {
+        return arrivalCity;
+    }
+
+    public void setDepartureCity(String departureCity) {
+        this.departureCity = departureCity;
+    }
+
+    public void setArrivalCity(String arrivalCity) {
+        this.arrivalCity = arrivalCity;
     }
 
     public boolean isTwoWay() {
@@ -68,9 +75,9 @@ public class UserInterface {
         System.out.println("============================");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter city from: ");
-        cityFrom = scanner.nextLine();
+        departureCity = scanner.nextLine();
         System.out.print("Enter city to: ");
-        cityTo = scanner.nextLine();
+        arrivalCity = scanner.nextLine();
         System.out.print("Enter departure date: ");
         String departureDateStr = scanner.nextLine();
         arrivalDate = parseDateFromString(departureDateStr);
@@ -88,7 +95,7 @@ public class UserInterface {
             arrivalDate = parseDateFromString(arrivalDateStr);
             twoWay = true;
         }
-
+        searchCriteria = new SearchCriteria(departureCity, arrivalCity, departureDate, arrivalDate);
         System.out.println("|   TRYING TO FIND SOME... |");
 
     }
@@ -105,9 +112,5 @@ public class UserInterface {
         //TestDijkstraAlgorithm a = new TestDijkstraAlgorithm();
         //a.testExcute();
     }
-
-
-
-
 
 }
