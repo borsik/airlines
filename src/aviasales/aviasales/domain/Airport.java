@@ -11,7 +11,7 @@ public class Airport {
         this.setAirportName(airportName);
     }
 
-    public Airport getAirportByCity(City city) {
+    public Airport getAirportByCity(aviasales.domain.City city) {
         return null;
     }
 
