@@ -1,7 +1,6 @@
 package aviasales;
 
 import aviasales.da.FlightDb;
-import aviasales.domain.Flight;
 import aviasales.domain.Route;
 import aviasales.domain.Ticket;
 
