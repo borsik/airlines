@@ -13,6 +13,7 @@ public class SearchCriteria {
     private String arrivalCity;
     private LocalDate dateDeparture;
     private LocalDate dateArrival;
+    private int clientsCount;
 
     public LocalDate getDateArrival() {
         return dateArrival;
@@ -46,10 +47,19 @@ public class SearchCriteria {
         this.departureCity = departureCity;
     }
 
-    public SearchCriteria(String newDept, String newArv, LocalDate newDateDept, LocalDate newDateArv){
+    public SearchCriteria(String newDept, String newArv, LocalDate newDateDept, LocalDate newDateArv, int clientsCount) {
         this.departureCity = newDept;
         this.arrivalCity = newArv;
         this.dateDeparture = newDateDept;
         this.dateArrival = newDateArv;
+        this.clientsCount = clientsCount;
+    }
+
+    public int getClientsCount() {
+        return clientsCount;
+    }
+
+    public void setClientsCount(int clientsCount) {
+        this.clientsCount = clientsCount;
     }
 }
