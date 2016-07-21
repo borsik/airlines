@@ -1,5 +1,4 @@
 package aviasales.da;
-
 import aviasales.domain.Flight;
 
 import java.io.*;
@@ -10,9 +9,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.StringTokenizer;
 
+import static aviasales.da.Flight.delimiter;
+import static aviasales.da.Flight.fileType;
+import static aviasales.da.Flight.timeFormat;
+
 public class FlightConcreteDB implements FlightDb {
-    static final String fileType = ".csv";
-    static final String delimiter = ",";
 
     FlightConcreteDB(String sourceFile) throws IOException {
         loadFlights(sourceFile);
@@ -45,6 +46,7 @@ public class FlightConcreteDB implements FlightDb {
             while (line != null) {
                 sb.append(line).append("\n");
 
+
                 StringTokenizer st = new StringTokenizer(line, delimiter);
                 while (st.hasMoreTokens()) {
                     int placeNumber;
@@ -56,7 +58,7 @@ public class FlightConcreteDB implements FlightDb {
                     fromDir = getNextElem(st);
                     toDir = getNextElem(st);
 
-                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy-HH:mm");
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern(timeFormat);
                     fromTime = LocalDateTime.parse(st.nextElement().toString(), formatter);
                     if (fromTime.isBefore(LocalDateTime.now()))
                         continue;
@@ -79,7 +81,7 @@ public class FlightConcreteDB implements FlightDb {
 
     }
 
-    static int saveObject(ArrayList<BuffAdapter> objects) throws IOException {
+    static int save(ArrayList<BuffAdapter> objects) throws IOException {
         BufferedWriter bw;
         if (objects.isEmpty()) {
             return 0;
@@ -104,7 +106,7 @@ public class FlightConcreteDB implements FlightDb {
     }
 
     @Override
-    public List<Flight> getFlightsByDate(Date flightDateFrom, Date flightDateTo) {
+    public List<Flight> filterFlightsByDate(Date flightDateFrom, Date flightDateTo) {
         return null;
     }
 

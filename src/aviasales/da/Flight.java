@@ -4,6 +4,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Flight implements BuffAdapter {
+    public static final String fileType = ".csv";
+    public static final String delimiter = ",";
+    public static final String timeFormat = "dd.MM.yyyy-HH:mm";
+
     private String number;
     private double cost;
     private int freePlaces;
@@ -11,7 +15,6 @@ public class Flight implements BuffAdapter {
     private String toDer;
     private LocalDateTime fromTime;
     private LocalDateTime arrTime;
-    private static String timeFormat = "dd.MM.yyyy-HH:mm";
 
     public Flight(String number, String fromDer, String arr, LocalDateTime fromTime,
                   LocalDateTime arrTime, double cost, int freePlaces){
@@ -34,23 +37,22 @@ public class Flight implements BuffAdapter {
 
     public String toString(){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(timeFormat);
-        String tmp = " Departure airport: " + this.fromDer +
-                " Arrive airport: " + this.toDer +
-                " Departure time: " + this.fromTime.format(formatter) +
-                " Arrive time: " + this.arrTime.format(formatter) +
-                " Cost: " + this.cost;
-        return tmp;
+        return  " Departure airport: " + fromDer +
+                " Arrive airport: " + toDer +
+                " Departure time: " + fromTime.format(formatter) +
+                " Arrive time: " + arrTime.format(formatter) +
+                " Cost: " + cost;
     }
 
     @Override
     public String BufStr() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(timeFormat);
-        return getNumber() + ","
-                + getFromDer() + ","
-                + getToDer() + ","
-                + getFromTime().format(formatter) + ","
-                + getArrTime().format(formatter) + ","
-                + getCost() + ","
+        return getNumber() + delimiter
+                + getFromDer() + delimiter
+                + getToDer() + delimiter
+                + getFromTime().format(formatter) + delimiter
+                + getArrTime().format(formatter)  + delimiter
+                + getCost() +  delimiter
                 + freePlaces();
     }
 }
