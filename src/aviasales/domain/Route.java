@@ -13,6 +13,10 @@ public class Route {
         this.setAirport_to(airport_to);
     }
 
+    public String toString(){
+        return "Departure airport: " + airport_from + " & Arrival airport: " + airport_to;
+    }
+
     public Airport getAirport_from() {
         return airport_from;
     }
