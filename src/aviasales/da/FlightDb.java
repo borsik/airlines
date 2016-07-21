@@ -2,6 +2,8 @@ package aviasales.da;
 
 import aviasales.domain.Flight;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -10,4 +12,6 @@ import java.util.List;
  */
 public interface FlightDb {
     List<Flight> getFlightsByDate(Date flightDateFrom, Date flightDateTo);
+    ArrayList<Flight> loadFlights(String className) throws IOException;
+
 }
