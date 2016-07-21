@@ -1,5 +1,9 @@
 package aviasales;
 
+import aviasales.dijkstra.TestDijkstraAlgorithm;
+
+import java.io.Console;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -105,10 +109,8 @@ public class UserInterface {
     public static void main(String [] args) throws ParseException {
         UserInterface userInterface = new UserInterface();
         userInterface.createUserInput();
+        //TestDijkstraAlgorithm a = new TestDijkstraAlgorithm();
+        //a.testExcute();
     }
-
-
-
-
 
 }

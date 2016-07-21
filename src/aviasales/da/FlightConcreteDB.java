@@ -1,5 +1,4 @@
 package aviasales.da;
-import aviasales.domain.Flight;
 
 import java.io.*;
 import java.time.LocalDateTime;
@@ -34,6 +33,11 @@ public class FlightConcreteDB implements FlightDb {
 
     private static String getNextElem(StringTokenizer st) {
         return st.nextElement().toString();
+    }
+
+    @Override
+    public List<Flight> filterFlightsByDate(Date flightDateFrom, Date flightDateTo) {
+        return null;
     }
 
     public ArrayList<Flight> loadFlights(String file) throws IOException {
@@ -105,7 +109,6 @@ public class FlightConcreteDB implements FlightDb {
         }
     }
 
-    @Override
     public List<Flight> getFlightsByDate(Date flightDateFrom, Date flightDateTo) {
         final String fileType = ".csv";
         final String delimiter = ",";
