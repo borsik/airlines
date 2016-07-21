@@ -27,13 +27,13 @@ public class Flight implements BuffAdapter {
         this.freePlaces = freePlaces;
     }
 
-    private String getNumber(){ return number; }
-    private double getCost(){ return cost; }
-    private int freePlaces(){ return freePlaces; }
-    private String getFromDer(){ return fromDer; }
-    private String getToDer(){ return toDer; }
-    private LocalDateTime getFromTime(){ return fromTime; }
-    private LocalDateTime getArrTime(){ return arrTime; }
+    public String getNumber(){ return number; }
+    public double getCost(){ return cost; }
+    public int freePlaces(){ return freePlaces; }
+    public String getFromDer(){ return fromDer; }
+    public String getToDer(){ return toDer; }
+    public LocalDateTime getFromTime(){ return fromTime; }
+    public LocalDateTime getArrTime(){ return arrTime; }
 
     public String toString(){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(timeFormat);
