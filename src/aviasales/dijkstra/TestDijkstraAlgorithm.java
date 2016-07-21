@@ -10,7 +10,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Created by innopolis on 21.07.16.
+ * Retrieved from http://www.vogella.com/tutorials/JavaAlgorithmsDijkstra/article.html
  */
 public class TestDijkstraAlgorithm {
 

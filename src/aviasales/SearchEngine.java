@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by laptop on 21.07.2016.
+ * Retrieved from http://www.vogella.com/tutorials/JavaAlgorithmsDijkstra/article.html
  */
 public class SearchEngine {
 
