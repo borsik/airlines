@@ -3,7 +3,7 @@ package aviasales.dijkstra;
 import java.util.List;
 
 /**
- * Created by innopolis on 21.07.16.
+ * Retrieved from http://www.vogella.com/tutorials/JavaAlgorithmsDijkstra/article.html
  */
 public class Graph {
     private final List<Vertex> vertexes;

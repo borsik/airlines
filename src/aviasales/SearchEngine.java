@@ -4,7 +4,7 @@ import aviasales.domain.Route;
 import aviasales.domain.Ticket;
 
 /**
- * Created by laptop on 21.07.2016.
+ * Retrieved from http://www.vogella.com/tutorials/JavaAlgorithmsDijkstra/article.html
  */
 public class SearchEngine {
 
