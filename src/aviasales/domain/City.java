@@ -12,7 +12,7 @@ public class City {
     }
 
     public City getCityByName(String cityName) {
-        return null;
+        return new City(cityName);
     }
 
     public String getCityName() {
