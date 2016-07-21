@@ -1,5 +1,7 @@
 package aviasales.domain;
 
+import java.util.*;
+
 /**
  * Created by laptop on 21.07.2016.
  */
@@ -12,7 +14,8 @@ public class Airport {
     }
 
     public Airport getAirportByCity(City city) {
-        return null;
+        Map<City, Airport> city_air_map = new HashMap<>();
+        return city_air_map.get(city);
     }
 
     public String getAirportName() {
