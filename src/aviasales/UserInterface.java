@@ -65,7 +65,6 @@ public class UserInterface {
         System.out.println("|   WELCOME TO AIRLINES    |");
         System.out.println("============================");
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to Airline");
         System.out.print("Enter city from: ");
         cityFrom = scanner.nextLine();
         System.out.print("Enter city to: ");
@@ -77,11 +76,14 @@ public class UserInterface {
         String arrivalDateStr;
 
         System.out.print("Two way? (1 - yes, 0 - no): ");
-        int twoWayInt = scanner.nextInt();
+
+        Scanner scannerInt = new Scanner(System.in);
+        int twoWayInt = scannerInt.nextInt();
+
         if(twoWayInt == 1) {
             System.out.print("Enter arrival date: ");
             arrivalDateStr = scanner.nextLine();
-            departureDate = parseDateFromString(arrivalDateStr);
+            arrivalDate = parseDateFromString(arrivalDateStr);
             twoWay = true;
         }
 
@@ -90,13 +92,14 @@ public class UserInterface {
     }
 
     public LocalDate parseDateFromString(String dateString) throws ParseException {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.mm.yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         return LocalDate.parse(dateString, formatter);
     }
 
 
-    public static void main(String [] args) {
-
+    public static void main(String [] args) throws ParseException {
+        UserInterface userInterface = new UserInterface();
+        userInterface.createUserInput();
     }
 
 
