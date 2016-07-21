@@ -8,17 +8,17 @@ import java.time.LocalDate;
 public class Ticket {
     private LocalDate arrivalDate;
     private LocalDate departureDate;
-    private City arrivalCity;
-    private City departureCity;
+    private Route route;
     private Passenger passenger;
 
-    public City getArrivalCity() {
-        return arrivalCity;
+    public Route getRoute() {
+        return route;
     }
 
-    public City getDepartureCity() {
-        return departureCity;
+    public void setRoute(Route route) {
+        this.route = route;
     }
+
 
     public LocalDate getArrivalDate() {
         return arrivalDate;
@@ -32,9 +32,8 @@ public class Ticket {
         return passenger;
     }
 
-    public Ticket(LocalDate arrivalDate, LocalDate departureDate, City arrivalCity, City departureCity, Passenger passenger){
-        this.arrivalCity = arrivalCity;
-        this.departureCity = departureCity;
+    public Ticket(LocalDate arrivalDate, LocalDate departureDate, Route route, Passenger passenger){
+        this.route = route;
         this.arrivalDate = arrivalDate;
         this.departureDate = departureDate;
         this.passenger = passenger;
