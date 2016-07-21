@@ -5,7 +5,21 @@ package aviasales.domain;
  */
 public class Airport {
 
+    private String airportName;
+
+    public Airport(String airportName) {
+        this.setAirportName(airportName);
+    }
+
     public Airport getAirportByCity(City city) {
         return null;
+    }
+
+    public String getAirportName() {
+        return airportName;
+    }
+
+    public void setAirportName(String airportName) {
+        this.airportName = airportName;
     }
 }
