@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Created by innopolis on 21.07.16.
+ * Retrieved from http://www.vogella.com/tutorials/JavaAlgorithmsDijkstra/article.html
  */
 public class DijkstraAlgorithm {
     private final List<Vertex> nodes;
