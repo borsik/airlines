@@ -1,5 +1,7 @@
 package aviasales.domain;
 
+import aviasales.da.Route;
+
 import java.time.LocalDate;
 
 /**
