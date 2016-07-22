@@ -40,7 +40,7 @@ public class FlightConcreteDB implements FlightDb {
         return null;
     }
 
-    public ArrayList<Flight> loadFlights(String file) throws IOException {
+    static ArrayList<Flight> loadFlights(String file) throws IOException {
         ArrayList<Flight> flights = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(file + fileType))) {

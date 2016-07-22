@@ -95,7 +95,7 @@ public class UserInterface {
             arrivalDate = parseDateFromString(arrivalDateStr);
             twoWay = true;
         }
-        searchCriteria = new SearchCriteria(departureCity, arrivalCity, departureDate, arrivalDate);
+        searchCriteria = new SearchCriteria(departureCity, arrivalCity, departureDate, arrivalDate, 5);
         System.out.println("|   TRYING TO FIND SOME... |");
 
     }
